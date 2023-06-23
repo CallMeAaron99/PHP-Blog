@@ -7,7 +7,7 @@
         if($post->deletePostById($postId)){
             // delete post success
             if(isset($_GET['search'])){
-                // from indext.php
+                // from index.php
                 header("location:index.php" . $_GET['search']);
             } else {
                 // from view.php

@@ -1,8 +1,8 @@
 <?php 
 	session_start();
 
-	include('header.php');
-	include('post.php');
+	include_once('header.php');
+	include_once('post.php');
 
 	$post = new Post($db);
 ?>

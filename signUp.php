@@ -1,13 +1,12 @@
 <?php
-	include('header.php'); 
-	include('User.php'); 
-	include('global.php');
+	include_once('header.php'); 
+	include_once('User.php'); 
 
 	$user = new User($db);
 
 	if(isset($_POST['btnSignUp'])){
 		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){  
-			// Captcha verification is incorrect
+			// captcha verification is incorrect
 			$msg = "验证码不正确";
 		} else {
 			// Captcha verification is Correct
@@ -53,17 +52,17 @@
 				<h1 class="h3 mb-3 fw-normal">注册</h1>
 				
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" placeholder="用户名" name="username" required>
+					<input type="text" class="form-control" placeholder="用户名" name="username" required />
 					<label for="floatingUsername">用户名</label>
 				</div>
 
 				<div class="form-floating mb-3">
-					<input type="password" class="form-control" placeholder="密码" name="password" required>
+					<input type="password" class="form-control" placeholder="密码" name="password" required />
 					<label for="floatingPassword">密码</label>
 				</div>
 
 				<div class="form-floating mb-3">
-					<input type="password" class="form-control" placeholder="确认密码" name="confirm_password" required>
+					<input type="password" class="form-control" placeholder="确认密码" name="confirm_password" required />
 					<label for="floatingPassword">确认密码</label>
 				</div>
 
@@ -72,11 +71,11 @@
 				</div>
 
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="验证码" name="captcha_code" required>
+					<input type="text" class="form-control" id="floatingInput" placeholder="验证码" name="captcha_code" required />
 					<label for="floatingInput">验证码</label>
 				</div>
 				
-				<button class="btn btn-primary w-100 py-2" type="submit" name="btnSignUp" >注册</button>
+				<button class="btn btn-primary w-100 py-2" type="submit" name="btnSignUp">注册</button>
 			</form>
 		</div>
 	</div>

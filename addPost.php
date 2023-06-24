@@ -1,7 +1,7 @@
 <?php
-	include('session.php');
-	include('header.php');
-	include('post.php');
+	include_once('session.php');
+	include_once('header.php');
+	include_once('post.php');
 	
 	$post = new Post($db);
 ?>
@@ -47,7 +47,7 @@
 					<div class="card-body">
 						<div class="form-group mb-3">
 							<label for="title">标题:</label>
-							<input type="text" name="title" class="form-control">
+							<input type="text" name="title" class="form-control" />
 						</div>
 
 						<div class="form-group mb-3">
@@ -57,7 +57,7 @@
 
 						<div class="form-group mb-3">
 							<label for="image">图片:</label>
-							<input type="file" name="image" class="form-control" accept=".png,.jpeg,.jpg">
+							<input type="file" name="image" class="form-control" accept=".png,.jpeg,.jpg" />
 							<div class="form-text">图片格式: jpg, jpeg 和 png </div>
 						</div>
 

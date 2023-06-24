@@ -1,7 +1,7 @@
 <?php
-	include('session.php');
-	include('header.php');
-	include('post.php');
+	include_once('session.php');
+	include_once('header.php');
+	include_once('post.php');
 	
 	$post = new Post($db);
 ?>
@@ -51,7 +51,7 @@
 					<?php foreach($post->findPostById($_GET['id']) as $postItem){ ?>
 						<div class="form-group mb-3">
 							<label for="title">标题:</label>
-							<input type="text" name="title" class="form-control" value="<?php echo $postItem['title'] ?>">
+							<input type="text" name="title" class="form-control" value="<?php echo $postItem['title'] ?>" />
 						</div>
 
 						<div class="form-group mb-3">
@@ -61,7 +61,7 @@
 
 						<div class="form-group mb-3">
 							<label for="image">图片:</label>
-							<input type="file" name="image" class="form-control" accept=".png,.jpeg,.jpg">
+							<input type="file" name="image" class="form-control" accept=".png,.jpeg,.jpg" />
 							<div class="form-text">图片格式: jpg, jpeg 和 png </div>
 						</div>
 

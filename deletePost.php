@@ -1,6 +1,6 @@
 <?php
-    include('session.php');
-    include('post.php');
+    include_once('session.php');
+    include_once('post.php');
     $post = new Post($db);
 
     if(isset($_GET['id']) && !empty($_GET['id'])) {

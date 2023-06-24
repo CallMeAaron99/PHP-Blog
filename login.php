@@ -1,6 +1,6 @@
 <?php
-	include('header.php'); 
-	include('User.php');
+	include_once('header.php'); 
+	include_once('User.php');
 
 	$user = new User($db);
 
@@ -49,12 +49,12 @@
 				<h1 class="h3 mb-3 fw-normal">登录</h1>
 				
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="用户名" name="username" required>
+					<input type="text" class="form-control" id="floatingInput" placeholder="用户名" name="username" required />
 					<label for="floatingInput">用户名</label>
 				</div>
 
 				<div class="form-floating mb-3">
-				<input type="password" class="form-control" id="floatingPassword" placeholder="密码" name="password" required>
+				<input type="password" class="form-control" id="floatingPassword" placeholder="密码" name="password" required />
 				<label for="floatingPassword">密码</label>
 				</div>
 
@@ -63,16 +63,16 @@
 				</div>
 
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="验证码" name="captcha_code" required>
+					<input type="text" class="form-control" id="floatingInput" placeholder="验证码" name="captcha_code" required />
 					<label for="floatingInput">验证码</label>
 				</div>
 
 				<div class="form-check text-start my-3 mb-3">
-					<input class="form-check-input" type="checkbox" name="rememberMe">
+					<input class="form-check-input" type="checkbox" name="rememberMe" />
 					<label class="form-check-label" for="flexCheckDefault">记住我</label>
 				</div>
 				
-				<button class="btn btn-primary w-100 py-2" type="submit" name="btnLogin" >Login</button>
+				<button class="btn btn-primary w-100 py-2" type="submit" name="btnLogin">登录</button>
 			</form>
 		</div>
 	</div>

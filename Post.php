@@ -1,6 +1,6 @@
 <?php
-    include('db.php');
-    include('global.php');
+    include_once('db.php');
+    include_once('global.php');
 
     class Post {
 

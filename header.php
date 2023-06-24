@@ -29,13 +29,13 @@
               <ul class="dropdown-menu text-small">
                 <!-- <li><a class="dropdown-item" href="#">Edit profile</a></li>
                 <li><hr class="dropdown-divider"></li> -->
-                <li><a class="dropdown-item" href="signOut.php">注销</a></li>
+                <li><a class="dropdown-item" href="logout.php">注销</a></li>
               </ul>
             </div>
           <?php }else{  ?>
             <div class="text-end">
               <a href="login.php" class="btn btn-light text-dark me-2">登录</a>
-              <a href="signUp.php" class="btn btn-primary">注册</a>
+              <a href="signup.php" class="btn btn-primary">注册</a>
             </div>
           <?php  } ?>
           

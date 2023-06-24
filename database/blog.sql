@@ -30,4 +30,3 @@ CREATE TABLE IF NOT EXISTS post_tag (
     FOREIGN KEY (post_id) REFERENCES post(id),
     FOREIGN KEY (tag_id) REFERENCES tag(id)
 );
-

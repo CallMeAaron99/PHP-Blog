@@ -1,4 +1,5 @@
 <?php
+    include('session.php');
     include('post.php');
     $post = new Post($db);
 
@@ -8,10 +9,10 @@
             // delete post success
             if(isset($_GET['search'])){
                 // from index.php
-                header("location:index.php" . $_GET['search']);
+                header("Location:index.php" . $_GET['search']);
             } else {
                 // from view.php
-                header("location:index.php");
+                header("Location:index.php");
             }
         }
     }

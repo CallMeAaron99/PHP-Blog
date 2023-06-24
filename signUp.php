@@ -15,7 +15,7 @@
 				if($_POST['password'] == $_POST['confirm_password']) {
 					if($user->signUp($_POST['username'], md5($_POST['password']))){
 						// user sign up success
-						header("location:index.php");
+						header("Location:index.php");
 						return;
 					} else {
 						// username alraedy exists

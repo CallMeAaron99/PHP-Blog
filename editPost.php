@@ -16,9 +16,9 @@
     		if($post->updatePost($postId, $title, $content)){
 				// update post success
 				if(isset($_POST['search'])){
-					header("location:index.php?" . $_POST['search']);
+					header("Location:index.php?" . $_POST['search']);
 				} else {
-					header("location:view.php?id=" . $_POST['id']);
+					header("Location:view.php?id=" . $_POST['id']);
 				}
     		}else{
 				// invalid image type

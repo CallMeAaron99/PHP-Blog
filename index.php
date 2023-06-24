@@ -84,7 +84,7 @@
                                             <?php echo $postItem['content']; ?>
                                         </p>
                                         <p class="card-text"><small class="text-body-secondary">作者: <?php echo $postItem['username']; ?></small></p>
-                                        <p class="card-text"><small class="text-body-secondary">创建于: <?php echo date('Y-m-d H:i:s',strtotime($postItem['created_at'])); ?></small></p>
+                                        <p class="card-text"><small class="text-body-secondary">发布于: <?php echo date('Y-m-d H:i:s',strtotime($postItem['created_at'])); ?></small></p>
                                         <p class="card-text"><small class="text-body-secondary">最近更新: <?php echo date('Y-m-d H:i:s',strtotime($postItem['updated_at'])); ?></small></p>
                                         <p class="card-text text-truncate"><small class="text-body-secondary">#<?php echo str_replace(' ', ' #', $postItem['tags']); ?></small></p>
                                     </div>

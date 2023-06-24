@@ -15,7 +15,7 @@
 			$userId = $_SESSION['user_id'];
     		if($post->insertPost($title, $content, $userId)){
 				// insert post success
-    			header("location:index.php");
+    			header("Location:index.php");
     		}else{
 				// invalid image type
 				echo <<<END

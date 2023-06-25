@@ -39,7 +39,6 @@
         }
 
         // update success
-        // header("Location:index.php");
-        return;
+        header("Location:index.php");
     }
 ?>

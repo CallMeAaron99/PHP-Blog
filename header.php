@@ -33,7 +33,7 @@
             <li>
               <hr class="dropdown-divider" />
             </li>
-            <li><a class="dropdown-item" href="logout.php">注销</a></li>
+            <li><a class="dropdown-item" href="logout.php">退出登录</a></li>
           </ul>
         </div>
         <?php }else{ ?>
@@ -47,7 +47,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">修改用户名</h5>
+              <h5 class="modal-title">修改密码</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="editUser.php" method="POST">

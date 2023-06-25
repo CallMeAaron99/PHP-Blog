@@ -4,10 +4,8 @@
 	include_once('header.php');
 	
 	$post = new Post($db);
-?>
 
-<?php
-    if(isset($_POST['btnUpdate'])){
+	if(isset($_POST['btnUpdate'])){
 		$title = strip_tags(trim($_POST['title']));
 		$content = trim($_POST['content']);
     	if(!empty($_POST['title']) && !empty($_POST['content'])){
@@ -51,7 +49,7 @@
 					<?php foreach($post->findPostById($_GET['id']) as $postItem){ ?>
 						<div class="form-group mb-3">
 							<label for="title">标题:</label>
-							<input type="text" name="title" class="form-control" value="<?php echo $postItem['title'] ?>" />
+							<input type="text" name="title" class="form-control" value="<?php echo $postItem['title'] ?>" required />
 						</div>
 
 						<div class="form-group mb-3">
@@ -71,7 +69,7 @@
 							<div class="form-text">标签之间用空格分隔, 例如: python java</div>
 						</div>
 
-						<button type="submit" name="btnUpdate" class="btn btn-primary">更新</button>
+						<button type="submit" name="btnUpdate" class="btn btn-primary">保存</button>
 						<input type="hidden" name="id" value="<?php echo $postItem['id'] ?>" />
 						<?php if(isset($_GET['search'])) { ?>
 						<input type="hidden" name="search" value="<?php echo $_GET['search'] ?>" />

@@ -4,9 +4,7 @@
 	include_once('header.php');
 	
 	$post = new Post($db);
-?>
 
-<?php
     if(isset($_POST['btnPost'])){
 		$title = strip_tags(trim($_POST['title']));
 		$content = trim($_POST['content']);
@@ -47,7 +45,7 @@
 					<div class="card-body">
 						<div class="form-group mb-3">
 							<label for="title">标题:</label>
-							<input type="text" name="title" class="form-control" />
+							<input type="text" name="title" class="form-control" required />
 						</div>
 
 						<div class="form-group mb-3">

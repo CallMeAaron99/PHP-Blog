@@ -5,11 +5,11 @@
 	$user = new User($db);
 
 	if(isset($_POST['btnLogin'])) {
-		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0) {  
-			// captcha verification is incorrect
+		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){  
+			// Captcha verification is incorrect
 			$msg = "验证码不正确";
 		} else {
-			// captcha verification is correct
+			// Captcha verification is Correct
 			if($user->login($_POST['username'], md5($_POST['password']))) {
 				// login success
 				if(isset($_POST['rememberMe'])) {

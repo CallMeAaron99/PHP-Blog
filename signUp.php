@@ -10,7 +10,7 @@
 				$msg
 				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 			</div>
-		END;
+			END;
     }
 
 	if(isset($_POST['btnSignUp'])) {
@@ -36,7 +36,7 @@
 			// username alraedy exists
 			errorMessage("用户名已存在");
 			return;
-		} 
+		}
 
 		// user sign up success
 		header("Location:index.php");

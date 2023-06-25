@@ -4,43 +4,38 @@
 
 	$user = new User($db);
 
-	function errorMessage($msg){
-        echo <<<END
+	if(isset($_POST['btnSignUp'])){
+		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){  
+			// captcha verification is incorrect
+			$msg = "验证码不正确";
+		} else {
+			// Captcha verification is Correct
+			if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['confirm_password'])) {
+				if($_POST['password'] == $_POST['confirm_password']) {
+					if($user->signUp($_POST['username'], md5($_POST['password']))){
+						// user sign up success
+						header("Location:index.php");
+						return;
+					} else {
+						// username alraedy exists
+						$mgs = "用户名已存在";
+					}
+				} else {
+					// passwords do not match
+					$mgs = "两次密码不匹配";
+				}
+			} else {
+				// one or more fields are empty
+				$mgs = "所有输入框不能为空";
+			}
+		}
+		echo <<<END
 			<div class="alert alert-danger alert-dismissible container">
-				$msg
+				$mgs
 				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 			</div>
-			END;
-    }
-
-	if(isset($_POST['btnSignUp'])) {
-		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0) {  
-			// captcha verification is incorrect
-			errorMessage("验证码不正确");
-			return;
-		} 
-		
-		if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['confirm_password'])) {
-			// one or more fields are empty
-			errorMessage("所有输入框不能为空");
-			return;
-		}
-
-		if($_POST['password'] != $_POST['confirm_password']) {
-			// passwords do not match
-			errorMessage("两次密码不匹配");
-			return;
-		}
-
-		if(!$user->signUp($_POST['username'], md5($_POST['password']))) {
-			// username alraedy exists
-			errorMessage("用户名已存在");
-			return;
-		}
-
-		// user sign up success
-		header("Location:index.php");
-	} 
+		END;
+	}
 	
 ?>
 

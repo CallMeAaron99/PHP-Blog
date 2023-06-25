@@ -1,15 +1,15 @@
 <?php
-	include_once('header.php'); 
 	include_once('User.php');
+	include_once('header.php');
 
 	$user = new User($db);
 
 	if(isset($_POST['btnLogin'])) {
-		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){  
-			// Captcha verification is incorrect
+		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0) {  
+			// captcha verification is incorrect
 			$msg = "验证码不正确";
 		} else {
-			// Captcha verification is Correct
+			// captcha verification is correct
 			if($user->login($_POST['username'], md5($_POST['password']))) {
 				// login success
 				if(isset($_POST['rememberMe'])) {
@@ -49,12 +49,12 @@
 				<h1 class="h3 mb-3 fw-normal">登录</h1>
 				
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="用户名" name="username" required />
+					<input type="text" class="form-control" placeholder="用户名" name="username" required />
 					<label for="floatingInput">用户名</label>
 				</div>
 
 				<div class="form-floating mb-3">
-				<input type="password" class="form-control" id="floatingPassword" placeholder="密码" name="password" required />
+				<input type="password" class="form-control" placeholder="密码" name="password" required />
 				<label for="floatingPassword">密码</label>
 				</div>
 
@@ -63,7 +63,7 @@
 				</div>
 
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="验证码" name="captcha_code" required />
+					<input type="text" class="form-control" placeholder="验证码" name="captcha_code" required />
 					<label for="floatingInput">验证码</label>
 				</div>
 

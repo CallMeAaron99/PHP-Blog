@@ -1,8 +1,8 @@
-<?php 
+<?php
 	session_start();
 
+	include_once('Post.php');
 	include_once('header.php');
-	include_once('post.php');
 
 	$post = new Post($db);
 ?>
@@ -35,22 +35,21 @@
 			<p><?php echo $postItem['content']; ?></p>
 		<?php } ?>
 	</div>
-</div>
-
-<div class="modal fade" id="deletePostModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">删除文章</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="text-truncate">确定要删除<span id="deletePostTitle"></span>?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-        <a id="deletePostBtn" class="btn btn-danger">删除</a>
-      </div>
-    </div>
-  </div>
+	<div class="modal fade" id="deletePostModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">删除文章</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p class="text-truncate">确定要删除<span id="deletePostTitle"></span>?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+					<a id="deletePostBtn" class="btn btn-danger">删除</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

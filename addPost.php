@@ -1,7 +1,7 @@
 <?php
 	include_once('session.php');
+	include_once('Post.php');
 	include_once('header.php');
-	include_once('post.php');
 	
 	$post = new Post($db);
 ?>

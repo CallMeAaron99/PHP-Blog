@@ -7,9 +7,9 @@
         $_SESSION['username'] = $username;
     }
 
-    include_once('header.php');
-    include_once('post.php');
+    include_once('Post.php');
     include_once('Tag.php');
+    include_once('header.php');
     
     $post = new Post($db);
     $tag = new Tag($db);

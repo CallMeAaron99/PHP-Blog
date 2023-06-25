@@ -1,37 +1,38 @@
 <?php
-	include_once('header.php'); 
-	include_once('User.php'); 
+	include_once('User.php');
+	include_once('header.php');
 
 	$user = new User($db);
 
-	if(isset($_POST['btnSignUp'])){
-		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){  
+	if(isset($_POST['btnSignUp'])) {
+		if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0) {  
 			// captcha verification is incorrect
 			$msg = "验证码不正确";
 		} else {
-			// Captcha verification is Correct
+			// captcha verification is correct
 			if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['confirm_password'])) {
 				if($_POST['password'] == $_POST['confirm_password']) {
-					if($user->signUp($_POST['username'], md5($_POST['password']))){
+					if($user->signUp($_POST['username'], md5($_POST['password']))) {
 						// user sign up success
 						header("Location:index.php");
 						return;
 					} else {
 						// username alraedy exists
-						$mgs = "用户名已存在";
+						$msg = "用户名已存在";
 					}
 				} else {
 					// passwords do not match
-					$mgs = "两次密码不匹配";
+					$msg = "两次密码不匹配";
 				}
 			} else {
 				// one or more fields are empty
-				$mgs = "所有输入框不能为空";
+				$msg = "所有输入框不能为空";
 			}
 		}
+
 		echo <<<END
 			<div class="alert alert-danger alert-dismissible container">
-				$mgs
+				$msg
 				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 			</div>
 		END;
@@ -71,7 +72,7 @@
 				</div>
 
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="验证码" name="captcha_code" required />
+					<input type="text" class="form-control" placeholder="验证码" name="captcha_code" required />
 					<label for="floatingInput">验证码</label>
 				</div>
 				
